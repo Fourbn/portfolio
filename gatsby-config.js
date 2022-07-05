@@ -1,24 +1,47 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`
+    title: "Philip Turkiewicz's Developer Portfolio",
+    description: 'Philip Turkiewicz is a Toronto-based front-end web developer who specializes in creating sleek, accessible, and performant client-facing websites using the JAMstack (React, Gatsby, Contentful, Sanity, Netlify).',
+    siteUrl: `https://www.codeturkie.io`
   },
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
-      "spaceId": process.env.CONTENTFUL_SPACE_ID
-    }
-  }, "gatsby-plugin-sass", "gatsby-plugin-image", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": process.env.GOOGLE_ANALYTICS_TRACKING_ID
-    }
-  }, "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  trailingSlash: 'never',
+  plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID
+      }
     },
-    __key: "images"
-  }]
+    'gatsby-plugin-sass',
+    'gatsby-plugin-image',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID
+      }
+    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          formats: [`webp`, `auto`],
+          quality: 90,
+          breakpoints: [375, 768, 1200],
+          placeholder: 'blurred'
+        }
+      }
+    },
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/'
+      },
+      __key: 'images'
+    }
+  ]
 };

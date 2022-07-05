@@ -1,0 +1,235 @@
+// NORMALIZE //
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+// MIXINS //
+@mixin break-at($breakpoint) {
+  @if $breakpoint=='mobile-small' {
+    @media (max-width: 375px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='mobile' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='tablet' {
+    @media (max-width: 1017px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='desktop' {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Color tinting & shading
+// https://css-tricks.com/snippets/sass/tint-shade-functions/
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// VARIABLES //
+$background: #140E1A;
+$white: #fff;
+$grey: #303436;
+
+$transBlue: #5BCEFA;
+$genderQueerPurple: #B57EDC;
+$transPink: #F5A9B8;
+$nonBinaryGold: #F4D06F;
+$agenderGreen: #A2FAA3;
+$straightBlue: #0868AC;
+
+// STRIPPING BROWSER PRESETS //
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li,
+a {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// FONTS & TYPOGRAPHY //
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2'), url('/fonts/SpaceGrotesk-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2'), url('/fonts/SpaceGrotesk-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+.subheading,
+.surheading,
+.tab,
+label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: 19.2rem;
+  @include break-at('tablet') {
+    font-size: 13.6rem;
+  }
+  @include break-at('mobile') {
+    font-size: 6.4rem;
+  }
+  @include break-at('mobile-small') {
+    font-size: 5.2rem;
+  }
+}
+
+h2,
+.skills,
+.subheading,
+.surheading,
+.tab {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 2;
+  text-transform: uppercase;
+  
+  @include break-at('mobile') {
+    font-size: 2rem;
+  }
+  @include break-at('mobile-small') {
+    font-size: 1.6rem;
+  }
+}
+
+h3,
+.visualHeading {
+  font-size: 6.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  
+  @include break-at('mobile') {
+    font-size: 4.8rem;
+  }
+  @include break-at('mobile-small') {
+    font-size: 4.4rem;
+  }
+}
+
+p,
+.label {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  
+  @include break-at('mobile-small') {
+    font-size: 1.2rem;
+  }
+}
+
+// SPACING & TEMPLATE DESIGN //
+body {
+  background-color: $background;
+  color: $white;
+}
+
+.wrapper {
+  max-width: 1400px;
+}
+
+.grid-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: 4% repeat(36, 1.527778%) 4%;
+  grid-column-gap: 1%;
+
+  @include break-at('tablet') {
+    max-width: 1017px;
+    grid-template-columns: 4% repeat(24, 2.79591%) 4%;
+    grid-column-gap: 1%;
+  }
+
+  @include break-at('mobile') {
+    max-width: 768px;
+    grid-template-columns: 3% repeat(12, 5.666%) 3%;
+    grid-column-gap: 2%;
+  }
+}
+
+.button {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: normal;
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 13px 25px;
+  border: 2px solid $white;
+  border-radius: 1px;
+  transition: background-color .3s, color .3s, transform .3s;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    border: 2px solid;
+    border-color: inherit;
+    transform: scaleX(1.07);
+    transition: border .3s, color .3s, transform .3s;
+  }
+}
