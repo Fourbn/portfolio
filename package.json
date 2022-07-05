@@ -2,22 +2,22 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "portfolio",
+  "description": "Philip Turkiewicz's developer portfolio",
   "author": "Philip Turkiewicz",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "FORCE_COLOR=1 env-cmd -f .env gatsby develop",
+    "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "rm -rf public && rm -rf .cache",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "gatsby": "^4.17.2",
     "gatsby-plugin-google-analytics": "^4.17.0",
     "gatsby-plugin-image": "^2.17.0",
+    "gatsby-plugin-netlify": "^5.0.0",
     "gatsby-plugin-react-helmet": "^5.17.0",
     "gatsby-plugin-sass": "^5.17.0",
     "gatsby-plugin-sharp": "^4.17.0",
@@ -29,5 +29,31 @@
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "babel-preset-gatsby": "^2.10.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.6.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint"
+    ]
   }
 }

@@ -5,13 +5,13 @@ module.exports = {
   plugins: [{
     resolve: 'gatsby-source-contentful',
     options: {
-      "accessToken": "hEFpaFR8CbOpLXCYPxFi9ALYObNSKmfR8dmG8iAAXQI",
-      "spaceId": "ivyiugkagzjf"
+      "accessToken": process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
+      "spaceId": process.env.CONTENTFUL_SPACE_ID
     }
   }, "gatsby-plugin-sass", "gatsby-plugin-image", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
-      "trackingId": "277494049"
+      "trackingId": process.env.GOOGLE_ANALYTICS_TRACKING_ID
     }
   }, "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
