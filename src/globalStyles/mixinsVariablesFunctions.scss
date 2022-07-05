@@ -1,0 +1,55 @@
+// MIXINS //
+@mixin break-at($breakpoint) {
+  @if $breakpoint=='mobile-small' {
+    @media (max-width: 375px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='mobile' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='tablet' {
+    @media (max-width: 1017px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint=='desktop' {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}
+
+// FUNCTIONS //
+// Color tinting & shading
+// https://css-tricks.com/snippets/sass/tint-shade-functions/
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// VARIABLES //
+$background: #140E1A;
+$white: #fff;
+$grey: #303436;
+
+$transBlue: #5BCEFA;
+$genderQueerPurple: #B57EDC;
+$transPink: #F5A9B8;
+$nonBinaryGold: #F4D06F;
+$agenderGreen: #A2FAA3;
+$straightBlue: #0868AC;

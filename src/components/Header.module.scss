@@ -1,0 +1,44 @@
+.header {
+  min-height: 8vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 7px;
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      width: 100px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.get-in-touch {
+  width: 100px;
+
+  a {
+    padding: 5px;
+    width: 100%;
+    transform: rotate(-30deg);
+    transition: transform 1s;
+
+    &:hover,
+    &focus {
+      transform: rotate(182deg);
+      transition: transform 1s;
+    }
+  }
+}
+
+.turkey-logo {
+  width: 100px;
+}

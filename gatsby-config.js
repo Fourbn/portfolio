@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Philip Turkiewicz's Developer Portfolio",
-    description: 'Philip Turkiewicz is a Toronto-based front-end web developer who specializes in creating sleek, accessible, and performant client-facing websites using the JAMstack (React, Gatsby, Contentful, Sanity, Netlify).',
+    description:
+      'Philip Turkiewicz is a Toronto-based front-end web developer who specializes in creating sleek, accessible, and performant client-facing websites using the JAMstack (React, Gatsby, Contentful, Sanity, Netlify).',
     siteUrl: `https://www.codeturkie.io`
   },
   trailingSlash: 'never',
@@ -13,7 +14,12 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID
       }
     },
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        additionalData: `@import "${__dirname}/src/globalStyles/mixinsVariablesFunctions.scss";`
+      }
+    },
     'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-google-analytics',

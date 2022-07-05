@@ -1,0 +1,123 @@
+.footer {
+  border-top: 1px solid $grey;
+  padding: 4rem 0;
+}
+
+.footer-nav {
+  margin: 0;
+  grid-column: span 3 / -1;
+  justify-self: end;
+  align-self: center;
+  
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    
+    @include break-at('tablet') {
+      justify-content: center;
+    }
+  }
+  
+  li {
+    font-size: 1rem;
+    margin: 0 5px;
+    padding: 0;
+  }
+}
+
+.credits {
+  text-align: center;
+  width: 100%;
+  padding: 35px 0;
+  grid-column: 6 / 9;
+  align-self: center;
+  
+  p:first-of-type {
+    margin-bottom: 4px;
+  }
+  
+  a {
+    transition: color 0.3s;
+  }
+  
+  a:hover,
+  a:focus {
+    color: $agenderGreen;
+  }
+  
+  .credit-icon {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    margin: 0 3px;
+    font-size: 1.4rem;
+    
+    &.heart {
+      color: $transPink;
+    }
+    
+    &.palette {
+      color: $agenderGreen;
+    }
+  }
+}
+
+.social-link {
+  padding: 1rem;
+  
+  .social-icon {
+    font-size: 2rem;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  &:hover .social-icon,
+  &:focus .social-icon {
+    transform: scale(1.6);
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  &.github:hover,
+  &.github.focus {
+    color: $transPink;
+  }
+  
+  &.linkedin:hover,
+  &.linkedin:focus {
+    color: $nonBinaryGold;
+  }
+  
+  &.twitter:hover,
+  &.twitter:focus {
+    color: $transBlue;
+  }
+}
+
+.turkey-logo {
+  width: 100px;
+  justify-self: start;
+  grid-column: 1 / span 3;
+  align-self: center;
+}
+
+@include break-at('tablet') {
+  
+  .turkey-logo,
+  .credits,
+  .footer-nav {
+    align-self: start;
+  }
+  
+  .turkey-logo {
+    justify-self: center;
+    grid-column: 2 / -2;
+  }
+  
+  .credits {
+    grid-column: 2 / -2;
+  }
+  
+  .footer-nav {
+    justify-self: center;
+    grid-column: 2 / -2;
+  }
+}
