@@ -1,0 +1,95 @@
+.project-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-container {
+  width: 45%;
+
+  @include break-at('tablet') {
+    width: 100%;
+  }
+}
+
+.image-container {
+  width: 55%;
+
+  @include break-at('tablet') {
+    width: 100%;
+  }
+}
+
+.text-container {
+  background-color: $background;
+  padding: 4rem 0;
+  position: relative;
+  width: 45%;
+  
+  @include break-at('tablet') {
+    width: 90%;
+  }
+  @include break-at('mobile') {
+    width: 100%;
+  }
+  
+
+  &.gender-queer-purple {
+    border-top: 6px solid $genderQueerPurple;
+    color: $genderQueerPurple;
+  }
+
+  &.trans-pink {
+    border-top: 6px solid $transPink;
+    color: $transPink;
+  }
+
+  &.trans-blue {
+    border-top: 6px solid $transBlue;
+    color: $transBlue;
+  }
+
+  &.agender-green {
+    border-top: 6px solid $agenderGreen;
+    color: $agenderGreen;
+  }
+
+  h3 {
+    color: inherit;
+  }
+
+  .skills,
+  .description {
+    color: $white;
+  }
+
+  .description {
+    margin: 1.2rem 0 2.1rem;
+  }
+
+  .links a:first-of-type {
+    margin-right: 3rem;
+  }
+}
+
+.text-container.even {
+  left: -6rem;
+  padding-left: 6rem;
+  
+  @include break-at('tablet') {
+    left: 0;
+    padding-left: 0;
+  }
+}
+
+.text-container.odd {
+  order: -1;
+  right: -6rem;
+  padding-right: 6rem;
+  
+  @include break-at('tablet') {
+    right: 0;
+    padding-right: 0;
+    order: 1;
+  }
+}

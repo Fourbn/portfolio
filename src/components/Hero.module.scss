@@ -1,0 +1,42 @@
+.hero {
+  min-height: 100vh;
+  margin: 4rem auto;
+  justify-content: center;
+  align-content: center;
+
+  h1 {
+    color: $transBlue;
+    margin: 25px 0 20px 0;
+    animation: fading-in 3s;
+    grid-column: 2 / -2;
+  }
+
+  & p:first-child {
+    text-align: center;
+  }
+  
+  & p:last-child {
+    text-align: center;
+  }
+}
+
+
+.subheading,
+.surheading {
+  grid-column: 2 / -2;
+  text-align: center;
+}
+
+.developer,
+.debug,
+.debutante,
+.surheading {
+  animation: fading-in 3s;
+}
+
+
+.skip-to-content {
+  width: 65px;
+  grid-column: 2 / -2;
+  margin: 4rem auto 0;
+}

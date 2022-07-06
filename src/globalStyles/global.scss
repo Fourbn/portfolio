@@ -101,7 +101,7 @@ h2,
 }
 
 h3,
-.visualHeading {
+.visual-heading {
   font-size: 6.4rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -177,5 +177,25 @@ body {
     border-color: inherit;
     transform: scaleX(1.07);
     transition: border .3s, color .3s, transform .3s;
+  }
+}
+
+@keyframes fading-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fading-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

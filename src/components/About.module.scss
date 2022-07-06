@@ -1,0 +1,114 @@
+.about {
+  min-height: 100vh;
+}
+
+.headshot-container {
+  grid-column: 1 / span 6;
+  margin: 0 auto;
+}
+
+.about-info {
+  grid-column: span 6 / -1;
+
+  h2 {
+    padding-left: 3px;
+    margin-bottom: -5px;
+  }
+
+  .visual-heading {
+    color: $nonBinaryGold;
+    margin: 5px 0;
+  }
+
+  &>p {
+    margin: 20px 0;
+  }
+
+  .button {
+    // with a new button hover, should change the margin-left 5px back to 0 for better alignment
+    margin: 25px 5px 55px 5px;
+
+    &:hover {
+      color: $nonBinaryGold;
+    }
+  }
+}
+
+.skills-box {
+  grid-column: span 6 / -1;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-gap: 1fr;
+
+  h4 {
+    font-size: 1.8rem;
+    padding-left: 8px;
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+
+  .skills {
+    grid-column: span 6 / -1;
+  }
+
+  .skill {
+    justify-self: flex-start;
+    align-self: center;
+    height: 100%;
+    margin: 3px;
+    padding-left: 8px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: transform 0.3s;
+    }
+
+    svg {
+      margin: 0 auto;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 7px 0;
+  }
+
+  .html svg,
+  .css svg,
+  .javascript svg {
+    width: 60px;
+  }
+
+  .jquery svg,
+  .react svg,
+  .firebase svg {
+    width: 70px;
+  }
+
+  .javascript svg,
+  .react svg {
+    padding-bottom: 3px;
+  }
+
+  .firebase svg {
+    margin-bottom: -15px;
+  }
+}
+
+@include break-at('tablet') {
+  .headshot-container {
+    grid-column: 1 / -1;
+  }
+  
+  .about-info,
+  .skills,
+  .skills-box {
+    grid-column: 1 / -1;
+  }
+}

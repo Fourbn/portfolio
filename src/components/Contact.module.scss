@@ -1,0 +1,131 @@
+.contact {
+  padding: 0 0 20rem;
+}
+
+h2,
+.visual-heading,
+p,
+button {
+  grid-column: 2 / -2;
+  text-align: center;
+}
+
+.visual-heading {
+  color: $nonBinaryGold;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 2rem auto 2.4rem;
+  grid-column: 4 / -4;
+}
+
+button {
+  background-color: $background;
+  cursor: pointer;
+  justify-self: center;
+  margin-top: 1rem;
+
+  &:hover,
+  &:focus {
+    color: $nonBinaryGold;
+  }
+}
+
+.contact-form {
+  grid-column: 2 / -2;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 6rem;
+  border: 4px solid $nonBinaryGold;
+  border-radius: 5px;
+
+  h3 {
+    color: $nonBinaryGold;
+    margin: 2rem 0 5rem;
+  }
+
+  .close-form-button {
+    border: none;
+    padding: 0;
+    font-size: 10rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    color: $transBlue;
+    background-color: transparent;
+    transform: rotate(45deg);
+    height: 90px;
+    position: absolute;
+    top: -28px;
+    right: -5px;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $transPink;
+      transition: color 0.3s;
+    }
+  }
+
+  input,
+  textarea {
+    background: rgba(244, 208, 111, 0.5);
+    color: $background;
+    font-size: 1.6rem;
+    border: 3px solid $background;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    transition: background 0.3s;
+
+    &:hover,
+    &:focus {
+      background: $nonBinaryGold;
+      transition: background 0.3s;
+    }
+
+    &::placeholder {
+      color: $background;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 148px;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+
+    span {
+      padding-left: 7px;
+
+      &:after {
+        content: "*";
+        margin-left: 2px;
+        position: relative;
+        top: -5px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .name,
+  .email {
+    width: 50%;
+
+    @include break-at('mobile') {
+      width: 100%;
+    }
+  }
+}
