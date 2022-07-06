@@ -29,7 +29,7 @@
 .button {
   // with a new button hover, should change the margin-left 5px back to 0 for better alignment
   margin: 25px 5px 55px 5px;
-  align-self: center;
+  align-self: start;
 
   &:hover {
     color: $nonBinaryGold;

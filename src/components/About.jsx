@@ -54,7 +54,7 @@ const About = () => {
           making people laugh.
         </p>
         <a
-          href="./assets/philip-turkiewicz-resume.pdf"
+          href="philip-turkiewicz-resume-2022.pdf"
           target="_blank"
           rel="noopener"
           className={`${button} button`}
