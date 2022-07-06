@@ -74,7 +74,7 @@ h1 {
     font-size: 13.6rem;
   }
   @include break-at('mobile') {
-    font-size: 6.4rem;
+    font-size: 7.8rem;
   }
   @include break-at('mobile-small') {
     font-size: 5.2rem;
@@ -116,12 +116,12 @@ h3,
 
 p,
 .label {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.5;
   
   @include break-at('mobile-small') {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -138,7 +138,6 @@ body {
 .grid-wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  background-color: $white;
   display: grid;
   grid-template-columns: 4% repeat(36, 1.527778%) 4%;
   grid-column-gap: 1%;
@@ -180,22 +179,18 @@ body {
   }
 }
 
-@keyframes fading-in {
-  0% {
-    opacity: 0;
-  }
+// specific classes for the Winnie anchor that is injected in via a data object in the Projects file
+.winnie {
+  color: $agenderGreen;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s, padding 0.3s;
+  padding: 2px 0 0;
 
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fading-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
+  &:hover,
+  &:focus {
+    color: $background;
+    background-color: $agenderGreen;
+    padding: 2px 7px 0;
+    transition: background-color 0.3s, color 0.3s, padding 0.3s;
   }
 }

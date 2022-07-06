@@ -13,6 +13,7 @@ import {
   about,
   aboutInfo,
   visualHeading,
+  headshotContainer,
   button,
   skills,
   skillsBox,
@@ -27,8 +28,8 @@ import {
 
 const About = () => {
   return (
-    <section className={about}>
-      <div className="headshotContainer">
+    <section className={`grid-wrapper ${about}`}>
+      <div className={headshotContainer}>
         <img
           src={HeadshotGif}
           alt="Headshot of Philip. They have short curly brown hair, blue framed glasses, and they are wearing a black and purple plaid flannel. They look very sofisticated."
@@ -36,7 +37,7 @@ const About = () => {
       </div>
       <div className={aboutInfo}>
         <h2>About me</h2>
-        <p className={`${visualHeading} visualHeading`}>Hey, I'm Philip!</p>
+        <p className={`${visualHeading} visual-heading`}>Hey, I'm Philip!</p>
         <p>
           Oh my goodness, hello! I am a Front-End developer based in Toronto, Canada. I love long
           walks on the beach, writing clean code, and pushing my skills to the limit. My interests
@@ -61,7 +62,7 @@ const About = () => {
           View Résumé
         </a>
       </div>
-      <h3 className={skills}>Skills</h3>
+      <h3 className={`skills ${skills}`}>Skills</h3>
       <ul className={skillsBox}>
         <li className={`${skill} ${html}`}>
           <HtmlLogo />

@@ -25,11 +25,11 @@
   }
 }
 
-.credits {
+.footer-credits {
   text-align: center;
   width: 100%;
   padding: 35px 0;
-  grid-column: 6 / 9;
+  grid-column: 5 / -5;
   align-self: center;
   
   p:first-of-type {
@@ -43,6 +43,10 @@
   a:hover,
   a:focus {
     color: $agenderGreen;
+  }
+
+  .aaron {
+    text-decoration: underline;
   }
   
   .credit-icon {
@@ -100,7 +104,6 @@
 }
 
 @include break-at('tablet') {
-  
   .turkey-logo,
   .credits,
   .footer-nav {

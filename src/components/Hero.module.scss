@@ -6,9 +6,15 @@
 
   h1 {
     color: $transBlue;
-    margin: 25px 0 20px 0;
-    animation: fading-in 3s;
+    margin: 25px 0 0 0;
+    opacity: 0;
+    animation: fading-in 3s 1.5s forwards;
     grid-column: 2 / -2;
+    text-align: center;
+
+    @include break-at('mobile') {
+      margin-top: 0;
+    }
   }
 
   & p:first-child {
@@ -31,9 +37,19 @@
 .debug,
 .debutante,
 .surheading {
-  animation: fading-in 3s;
+  opacity: 0;
+  animation: fading-in 3s forwards;
 }
 
+.developer {
+  animation-delay: 3s;
+}
+.debug {
+  animation-delay: 4s;
+}
+.debutante {
+  animation-delay: 5s;
+}
 
 .skip-to-content {
   width: 65px;

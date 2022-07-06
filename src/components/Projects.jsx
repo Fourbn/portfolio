@@ -2,12 +2,17 @@ import React from 'react';
 
 import ProjectCard from './ProjectCard';
 
+import MadlibsImg from '../images/madlib-screenshot.png';
+import DragNameImg from '../images/queen-name-screenshot.png';
+import UnderSeaImg from '../images/under-the-sea-screenshot.png';
+import NewIdentityImg from '../images/new-identity-screenshot.png';
+
 import { projects, visualHeading, projectsList } from './Projects.module.scss';
 
 const Projects = () => {
   	const allProjects = [
       {
-        // image: MadlibsImg,
+        image: MadlibsImg,
         heading: 'Madlibs App',
         skills: 'React - Firebase - JSX - SASS',
         description:
@@ -16,7 +21,7 @@ const Projects = () => {
         type: 'genderQueerPurple'
       },
       {
-        // image: DragNameImg,
+        image: DragNameImg,
         heading: 'Drag Name Generator',
         skills: 'JavaScript - jQuery - SASS',
         description:
@@ -28,7 +33,7 @@ const Projects = () => {
         type: 'transPink'
       },
       {
-        // image: UnderSeaImg,
+        image: UnderSeaImg,
         heading: 'Under the Sea',
         skills: 'HTML - SASS - jQuery',
         description:
@@ -40,7 +45,7 @@ const Projects = () => {
         type: 'transBlue'
       },
       {
-        // image: NewIdentityImg,
+        image: NewIdentityImg,
         heading: 'New Identity, Who Dis',
         skills: 'jQuery - API - Pair Programming',
         description:
@@ -54,9 +59,9 @@ const Projects = () => {
     ];
 
   return (
-    <section className={projects}>
+    <section className={`grid-wrapper ${projects}`}>
       <h2>Projects</h2>
-      <p className={`${visualHeading} visualHeading`}>Curious What I've Done?</p>
+      <p className={`${visualHeading} visual-heading`}>Curious What I've Done?</p>
       <ul className={projectsList}>
         {allProjects.map((project, index) => (
           <li key={project.image}>

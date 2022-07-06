@@ -14,10 +14,10 @@ import {
 
 const Hero = () => {
   return (
-    <section className={hero}>
-      <p className={`${subheading} subheading`}>Philip Turkiewicz is...</p>
+    <section className={`grid-wrapper ${hero}`}>
+      <p className={`${surheading} surheading`}>Philip Turkiewicz is...</p>
       <h1>CodeTurkie</h1>
-      <p className={`${surheading} surheading`}>
+      <p className={`${subheading} subheading`}>
         <span className={developer}>Developer.</span> <span className={debug}>Debugger.</span>{' '}
         <span className={debutante}>Debutante.</span>
       </p>

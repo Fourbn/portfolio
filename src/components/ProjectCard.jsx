@@ -5,23 +5,23 @@ import * as ProjectCardStyles from './ProjectCard.module.scss';
 const ProjectCard = ({ projectContent, order }) => {
   const isEvenCard = order % 2 === 0;
   return (
-    <div className={ProjectCardStyles.projectCard}>
+    <div className={`grid-wrapper ${ProjectCardStyles.projectCard}`}>
       <div
         className={`${ProjectCardStyles.imageContainer} ${ProjectCardStyles[projectContent.type]} ${
           isEvenCard ? ProjectCardStyles.even : ProjectCardStyles.odd
         }`}
       >
-        {/* <img
+        <img
           src={projectContent.image}
           alt={`Screenshot of the ${projectContent.heading} project`}
-        /> */}
+        />
       </div>
       <div
         className={`${ProjectCardStyles.textContainer} ${ProjectCardStyles[projectContent.type]}  ${
           isEvenCard ? ProjectCardStyles.even : ProjectCardStyles.odd
         }`}
       >
-        <p className={ProjectCardStyles.skills}>{projectContent.skills}</p>
+        <p className={`skills ${ProjectCardStyles.skills}`}>{projectContent.skills}</p>
         <h3>{projectContent.heading}</h3>
         <p
           className={ProjectCardStyles.description}

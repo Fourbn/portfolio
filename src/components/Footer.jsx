@@ -9,27 +9,29 @@ import {
   creditIcon,
   heart,
   palette,
+  footerCredits,
   footerNav,
   socialLink,
   socialIcon,
   github,
   linkedin,
-  twitter
+  twitter,
+  aaron
 } from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className={footer}>
+    <footer className={`grid-wrapper ${footer}`}>
       <div className={turkeyLogo}>
         <TurkeyLogo />
       </div>
-      <div>
+      <div className={footerCredits}>
         <p>
-          Made with <FaHeart className={`${creditIcon} ${heart}`} /> by Philip Turkiewicz
+          Coded with <FaHeart className={`${creditIcon} ${heart}`} /> by Philip Turkiewicz
         </p>
         <p>
           Designed with <FaPalette className={`${creditIcon} ${palette}`} /> by{' '}
-          <a href="https://aaronvince.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://aaronvince.com/" target="_blank" rel="noopener noreferrer" className={aaron}>
             Aaron Vince
           </a>
         </p>

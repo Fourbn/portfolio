@@ -1,8 +1,8 @@
-.project {
+.projects {
   padding: 20rem 0;
 }
 
-.project h2,
+.projects h2,
 .visual-heading {
   grid-column: 2 / -2;
   text-align: center;
@@ -26,28 +26,13 @@
     &:last-of-type {
       margin-bottom: 0;
     }
-  }
-  
-  @include break-at('tablet') {
-    grid-column: 2 / -2;
+
+    @include break-at('tablet') {
+      margin-bottom: 26vh;
+    }
   }
 }
 
 .visual-heading {
   color: $agenderGreen;
-}
-
-.winnie {
-  color: $agenderGreen;
-  border-radius: 10px;
-  transition: background-color 0.3s, color 0.3s, padding 0.3s;
-  padding: 2px 0 0;
-
-  &:hover,
-  &:focus {
-    color: $background;
-    background-color: $agenderGreen;
-    padding: 2px 7px 0;
-    transition: background-color 0.3s, color 0.3s, padding 0.3s;
-  }
 }

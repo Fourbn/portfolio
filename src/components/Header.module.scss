@@ -1,16 +1,22 @@
 .header {
   min-height: 8vh;
   position: fixed;
+  z-index: 99;
   left: 0;
   right: 0;
   top: 7px;
-
+  pointer-events: none;
+  
   nav ul {
+    max-width: 1450px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    @include break-at('mobile') {
+      margin: 0 1rem;
+    }
 
     li {
-      width: 100px;
       padding: 10px;
       display: flex;
       align-items: center;
@@ -23,8 +29,7 @@
 }
 
 .get-in-touch {
-  width: 100px;
-
+  pointer-events: all;
   a {
     padding: 5px;
     width: 100%;
@@ -39,6 +44,11 @@
   }
 }
 
+.get-in-touch,
 .turkey-logo {
   width: 100px;
+
+  @include break-at('mobile') {
+    width: 75px;
+  }
 }

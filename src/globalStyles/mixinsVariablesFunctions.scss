@@ -1,7 +1,7 @@
 // MIXINS //
 @mixin break-at($breakpoint) {
   @if $breakpoint=='mobile-small' {
-    @media (max-width: 375px) {
+    @media (max-width: 450px) {
       @content;
     }
   }
@@ -13,7 +13,7 @@
   }
 
   @else if $breakpoint=='tablet' {
-    @media (max-width: 1017px) {
+    @media (max-width: 1092px) {
       @content;
     }
   }
@@ -53,3 +53,23 @@ $transPink: #F5A9B8;
 $nonBinaryGold: #F4D06F;
 $agenderGreen: #A2FAA3;
 $straightBlue: #0868AC;
+
+@keyframes fading-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fading-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

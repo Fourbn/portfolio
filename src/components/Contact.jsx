@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <section className={`grid-wrapper ${contact}`} id="contact">
       <h2>Contact</h2>
-      <p className={`${visualHeading} visualHeading`}>
+      <p className={`${visualHeading} visual-heading`}>
         <span>You Picking Up</span> What I'm Putting Down?
       </p>
       <p>

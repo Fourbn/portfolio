@@ -2,10 +2,10 @@
   padding: 0 0 20rem;
 }
 
-h2,
+.contact h2,
 .visual-heading,
-p,
-button {
+.contact p,
+.contact button {
   grid-column: 2 / -2;
   text-align: center;
 }
@@ -16,12 +16,22 @@ button {
   flex-direction: column;
 }
 
-p {
+.contact p {
   margin: 2rem auto 2.4rem;
   grid-column: 4 / -4;
+  max-width: 900px;
+  &:last-of-type {
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+
+  @include break-at('tablet') {
+    max-width: 100%;
+    grid-column: 2 / -2;
+  }
 }
 
-button {
+.contact button {
   background-color: $background;
   cursor: pointer;
   justify-self: center;
@@ -47,6 +57,8 @@ button {
   h3 {
     color: $nonBinaryGold;
     margin: 2rem 0 5rem;
+    text-align: center;
+    line-height: 1.25;
   }
 
   .close-form-button {

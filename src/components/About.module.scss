@@ -3,12 +3,13 @@
 }
 
 .headshot-container {
-  grid-column: 1 / span 6;
-  margin: 0 auto;
+  grid-column: 1 / span 18;
 }
 
 .about-info {
-  grid-column: span 6 / -1;
+  grid-column: span 18 / -2;
+  display: flex;
+  flex-direction: column;
 
   h2 {
     padding-left: 3px;
@@ -23,41 +24,40 @@
   &>p {
     margin: 20px 0;
   }
+}
 
-  .button {
-    // with a new button hover, should change the margin-left 5px back to 0 for better alignment
-    margin: 25px 5px 55px 5px;
+.button {
+  // with a new button hover, should change the margin-left 5px back to 0 for better alignment
+  margin: 25px 5px 55px 5px;
+  align-self: center;
 
-    &:hover {
-      color: $nonBinaryGold;
-    }
+  &:hover {
+    color: $nonBinaryGold;
   }
 }
 
+.skills {
+  grid-column: span 18 / -2;
+}
+
 .skills-box {
-  grid-column: span 6 / -1;
-  width: 90%;
+  grid-column: span 18 / -2;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  grid-gap: 1fr;
+  grid-template-columns: repeat(6, minmax(70px, 1fr));
+  grid-auto-columns: 1fr;
+  grid-gap: 10px;
 
   h4 {
     font-size: 1.8rem;
     padding-left: 8px;
     width: 100%;
-    grid-column: 1 / -1;
-  }
-
-  .skills {
-    grid-column: span 6 / -1;
+    grid-column: span 18 / -2;
   }
 
   .skill {
     justify-self: flex-start;
     align-self: center;
     height: 100%;
-    margin: 3px;
-    padding-left: 8px;
     transition: transform 0.3s;
     display: flex;
     flex-direction: column;
@@ -103,12 +103,29 @@
 
 @include break-at('tablet') {
   .headshot-container {
-    grid-column: 1 / -1;
+    grid-column: 2 / -2;
+    margin: 0 auto 2rem;
   }
-  
+
   .about-info,
   .skills,
   .skills-box {
-    grid-column: 1 / -1;
+    grid-column: 2 / -2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .skills-box {
+    width: 100%;
+
+    .skill {
+      justify-self: center;
+    }
+  }
+}
+
+@include break-at('mobile') {
+  .skills-box {
+    grid-template-columns: repeat(3, minmax(70px, 1fr));
   }
 }
