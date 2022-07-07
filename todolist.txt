@@ -1,0 +1,11 @@
+> contentfulize content on site (priority on case study cards)
+> add template to discuss case studies in more depth
+> combine school projects into one case study example called "School Projects"
+> build out 404 page
+
+---
+After unemployed for a while
+> build out blog template & connect to Contentful
+> flesh out menu to include blog 
+> add animations to Turkey logo
+> write out some blog posts on shit I've learned at Juno
